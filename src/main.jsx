@@ -2189,18 +2189,6 @@ function EndgamePage() {
       featuredTitle
       className="industry-dark-page business-dark-page"
     >
-      <div className="endgame-summary-grid">
-        {endgameLogic.map((item) => (
-          <article key={item.title}>
-            <small>Next Node</small>
-            <h3>{item.title}</h3>
-            <p>
-              {item.text}
-              <Ref ids={item.refs} />
-            </p>
-          </article>
-        ))}
-      </div>
       <div className="business-section-head no-section-label">
         <h3>具微科技团队</h3>
       </div>
