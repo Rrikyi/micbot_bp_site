@@ -341,7 +341,7 @@ const teamCards = [
     source: '公开融资报道',
     refs: ['officialA3', 'krA3'],
     detail:
-      '投资方覆盖关节与传动、电连接、国资平台、铝业、化工等产业资源；这是 B 轮叙事里的加速器，也需要拆分关联交易与真实复购。',
+      '投资方覆盖关节与传动、电连接、国资平台、铝业、化工等产业资源；叙事里的加速器，也需要拆分关联交易与真实复购。',
     icon: Building2,
   },
 ];
@@ -1326,47 +1326,87 @@ const capitalQuestions = [
     title: '资本化',
     status: '部分具备',
     tone: 'amber',
-    summary: '有产品、平台和场景叙事，但可复制收入、边际成本下降和平台化证据还要继续补。',
-    refs: ['officialP1', 'officialP2', 'officialExr', 'hubMove'],
+    scoreLabel: '资本化总分',
+    score: '8/10',
+    scoreParts: [
+      '1. 可复制收入：3/4。具微已经不是单纯卖硬件，而是 P1/P2/ExR + HUB/MOVE + MicVLC 的组合；但公开证据仍不足以证明软件与服务收入已经稳定放大。',
+      '2. 存量价值：2.5/3。设备进入特种工业场景后，天然具备持续服务、持续运维和持续数据回流的想象空间，但订阅、留存、复购和切换成本还需要继续验证。',
+      '3. 关键节点议价权：2.5/3。防爆准入、1000Gs 强磁、四防和特种工业入口，让具微卡在稀缺且带排他性的节点上，这是目前最强的资本化部分。',
+    ],
+    summary: '结论：具微的资本化入口已经成立，但真正跑通还要看复制、存量和议价权是否持续兑现。',
+    refs: ['officialP1', 'officialP2', 'officialExr', 'hubMove', 'micvlc', 'officialA3'],
   },
   {
     q: 'Q2',
     title: '资产',
     status: '部分具备',
     tone: 'amber',
-    summary: '准入资质、客户资源和数据都有资产化方向，但订阅、留存、复购和定价权仍需验证。',
-    refs: ['hubMove', 'micvlc', 'officialA3'],
+    scoreLabel: '资产化总分',
+    score: '6.5/10',
+    scoreParts: [
+      '1. 技术专利：1.5/2.5。具微有本体、关节和平台叙事，但技术专利绕不开程度仍需核验。',
+      '2. 客户关系/客户资源：1.5/2.5。具微有神火、魏桥、滨化等产业入口，但复购、回款和流程绑定还要验证。',
+      '3. 定价权资产：2/2.5。具微的防爆准入、强磁能力、四防和特种工业可靠性交付，有机会让客户愿意为安全生产支付溢价。',
+      '4. 复利资产：1.5/2.5。HUB/MOVE/MicVLC 给了数据飞轮和网络效应入口，但订阅留存、数据回流和规模增值仍需验证。',
+    ],
+    summary: '结论：具微已经有资产化方向，但最像资产的是资质带来的定价权；客户、专利、数据和品牌还需要继续通过转换成本、复购和复利增长来坐实。',
+    refs: ['hubMove', 'micvlc', 'officialA3', 'officialExr', 'micbotPatentT'],
   },
   {
     q: 'Q3',
     title: '产业链',
     status: '具备',
     tone: 'green',
-    summary: '卡在特种工业移动作业入口和高危场景入口，位置比普通硬件更接近稀缺节点。',
-    refs: ['officialP1', 'officialP2', 'officialExr', 'krA3'],
+    scoreLabel: '产业链总分',
+    score: '7.5/10',
+    scoreParts: [
+      '1. 产业链位置：2.5/3。具微不在上游零部件，也不只是下游应用端，而是卡在“特种工业移动作业系统集成 + 场景准入交付”这个中间偏下游的位置，离客户场景更近。',
+      '2. 利润池距离：2/2.5。它比普通机器人厂商更接近高价值场景的利润池，但如果仍以硬件项目制为主，利润还是会受 BOM、交付和定制化拖累。',
+      '3. 核心资源距离：2/2.5。它靠近防爆准入、高危客户、极端工况数据这些核心资源，这些资源比参数更稀缺，也更难被短期复制。',
+      '4. 议价权与现金流：1/2。准入型议价权已经出现雏形，但真正的现金流质量还要继续看验收、回款、复购和软件/运维收入占比。',
+    ],
+    summary: '结论：具微已经卡在产业链里的关键位置，离客户和核心资源都比较近；但利润分配和现金流质量，还要靠标准化、复购和服务化收入继续坐实。',
+    refs: ['officialP1', 'officialP2', 'officialExr', 'krA3', 'officialA3', 'hubMove'],
   },
   {
     q: 'Q4',
     title: '壁垒',
     status: '具备',
     tone: 'green',
-    summary: '防爆资质、1000Gs 强磁、四防、重载和软件平台，已经具备结构性壁垒的雏形。',
-    refs: ['officialExr', 'hubMove', 'micvlc'],
+    scoreLabel: '结构性壁垒总分',
+    score: '8/10',
+    scoreParts: [
+      '1. 网络效应：1.5/2。特种工业不是典型消费互联网，但具微若能把多场景、多客户、多数据接进同一平台，体验和效率会随使用提升；目前更像弱网络效应和平台效应的早期形态。',
+      '2. 准入壁垒：2.5/2.5。防爆认证、1000Gs 强磁、四防和特种场景准入，是别人短期拿不到、也不容易绕过去的强壁垒。',
+      '3. 数据飞轮：1.5/2。HUB / MOVE / MicVLC 提供了数据闭环入口，理论上可越用越准，但公开资料还不足以证明飞轮已经完全跑起来。',
+      '4. 转换成本：1.3/1.5。产品一旦嵌入客户巡检、运维和调度流程，切换供应商就会付出时间、合规和安全成本，转换成本会逐步抬升。',
+      '5. 品牌心智：1.2/1。B2B 品牌不是知名度，而是“安全、可靠、能交付”的心智；具微正在建立特种工业第一心智，但还需更多标杆案例坐实。',
+    ],
+    summary: '结论：具微最强的是准入壁垒，其次是转换成本和数据飞轮；网络效应和品牌心智还在形成阶段，但已经有结构性壁垒的雏形。',
+    refs: ['officialExr', 'hubMove', 'micvlc', 'officialP1', 'officialP2'],
   },
   {
     q: 'Q5',
     title: '估值',
     status: '部分具备',
     tone: 'amber',
-    summary: '融资、订单和营收故事可以支撑估值抬升，但从 1 到 N 的下一跳仍要靠更强的交付和复购证明。',
-    refs: ['officialA2', 'sinaA2', 'reportCalc'],
+    scoreLabel: '估值总分',
+    score: '6.5/10',
+    scoreParts: [
+      '1. 当前节点：2/2.5。具微已经不是“只有概念”的早期项目，公开订单、营收口径和产品落地，说明它站在“有人愿意付钱”的节点上。',
+      '2. 这轮融资要带到哪：1.5/2.5。资金更像是把公司从“标杆项目”推到“可复制项目”，核心任务是把获客、交付、回款和软件化能力做成可重复模板。',
+      '3. 下一节点的估值逻辑：1.5/2。下一轮估值不再只看单个订单，而是看获客模型是否可复制、单位经济模型是否稳定，以及毛利是否能随规模趋势性改善。',
+      '4. 跨品类跨区域扩张：1.5/2。若能从巡检扩展到消防、危化、矿山、公共安全，并保持同一底盘、同一平台和同一交付体系，品牌和公司才有承载更大规模的能力。',
+    ],
+    summary: '结论：具微现在站在“有人愿意付钱、已有订单验证”的节点上；这轮融资的意义，是把它推到“可复制获客 + 稳定毛利 + 可扩张品牌”的下一节点。',
+    refs: ['officialA2', 'sinaA2', 'reportCalc', 'officialP1', 'officialP2', 'hubMove'],
   },
   {
     q: 'Q6',
     title: '终局',
     status: '部分具备',
     tone: 'amber',
-    summary: '可以讲成特种工业平台型公司，但是否能成为终局玩家，还取决于规模、品牌和数据能否继续累积。',
+    summary: '可以特种工业平台型公司，但是否能成为终局玩家，还取决于规模、品牌和数据能否继续累积。',
     refs: ['idc', 'smartMineMarket'],
   },
   {
@@ -1430,12 +1470,12 @@ const endgameLogic = [
   },
   {
     title: '这一轮融资要带到哪个节点',
-    text: 'B 轮资金应把公司从“能做标杆项目”推到“能稳定复制项目”：量产良率、证书适用范围、前 20 大客户回款、运维 SLA、软件平台数据指标都要被量化。',
+    text: '从“能做标杆项目”推到“能稳定复制项目”：量产良率、证书适用范围、前 20 大客户回款、运维 SLA、软件平台数据指标需要量化。',
     refs: ['officialA3', 'hubMove', 'micvlc'],
   },
   {
     title: '下一个估值逻辑是什么',
-    text: '如果只能卖硬件，估值会被制造业毛利和竞品价格锚定；如果能证明场景包复用、客户锁定、数据飞轮和特种准入，估值逻辑才可能从硬件公司切到工业具身平台。',
+    text: '能证明场景包复用、客户锁定、数据飞轮和特种准入，估值逻辑可能从硬件公司切到工业具身平台。',
     refs: ['reportCalc', 'unitreeIpo', 'deepIpo'],
   },
 ];
@@ -2067,7 +2107,20 @@ function CapitalizationPage() {
             <div className="capital-question-body">
               <div className="capital-question-head">
                 <span className={`status-pill ${item.tone}`}>{item.status}</span>
+                {item.score ? (
+                  <span className="capital-score-pill">
+                    <strong>{item.score}</strong>
+                    <em>{item.scoreLabel || '评分'}</em>
+                  </span>
+                ) : null}
               </div>
+              {item.scoreParts ? (
+                <ul className="capital-score-parts">
+                  {item.scoreParts.map((part) => (
+                    <li key={part}>{part}</li>
+                  ))}
+                </ul>
+              ) : null}
               <p>
                 {item.summary}
                 <Ref ids={item.refs} />
@@ -2088,14 +2141,14 @@ function AssetsPage() {
   return (
     <PageShell
       title="4.1 资产壁垒：专利、客户、资质、数据、品牌"
-      intro="按专利、客户、资质、数据、品牌五项逐一判断，看看具微哪些已经接近资产，哪些还在验证中。"
+      intro="按专利、客户、资质、数据、品牌五项逐一判断"
       featuredTitle
       className="industry-dark-page business-dark-page"
     >
       <div className="capital-hero">
         <div className="capital-hero-main">
           <span className="eyebrow">Asset Barrier</span>
-          <h3>先看五项：专利、客户、资质、数据、品牌。</h3>
+          <h3>专利、客户、资质、数据、品牌。</h3>
           <p>
             对具微来说，最强的是资质；客户和数据有资产化方向；专利和品牌还要继续补证据。
           </p>
@@ -2132,10 +2185,11 @@ function AssetsPage() {
 function EndgamePage() {
   return (
     <PageShell
-      title="5.1 终局与团队：凭什么五年后具微可能值 100 亿"
-      intro="100 亿不是口号，而是一组递进证明：产品有人付钱、获客模型可复制、产业链长出议价权、跨品类跨区域扩张，且团队能活到终局。"
+      title="5.1 终局与团队"
+      featuredTitle
+      className="industry-dark-page business-dark-page"
     >
-      <div className="logic-grid">
+      <div className="endgame-summary-grid">
         {endgameLogic.map((item) => (
           <article key={item.title}>
             <small>Next Node</small>
@@ -2147,17 +2201,8 @@ function EndgamePage() {
           </article>
         ))}
       </div>
-      <div className="scale-timeline">
-        {scaleSteps.map((step) => {
-          const Icon = step.icon;
-          return (
-            <article key={step.title}>
-              <Icon size={24} />
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </article>
-          );
-        })}
+      <div className="business-section-head no-section-label">
+        <h3>具微科技团队</h3>
       </div>
       <div className="team-grid">
         {teamCards.map((card) => {
@@ -2187,7 +2232,7 @@ function TeamPage() {
     <PageShell
       eyebrow="04 / Team"
       title="团队：谁能把产品、场景、交付和产业资源拧成一股绳"
-      intro="B轮 BP 中团队不是简历背书，而是对前文方案与验证能否持续落地的组织能力解释。现有公开资料没有完整管理层名单，因此仅展示能从官网、36氪报道和行研中对应到的人与团队口径。"
+      intro="现有公开资料没有完整管理层名单，因此仅展示能从官网、36氪报道和行研中对应到的人与团队口径。"
     >
       <div className="team-grid">
         {teamCards.map((card) => {
@@ -2211,7 +2256,7 @@ function TeamPage() {
       <div className="callout">
         <ClipboardCheck size={24} />
         <p>
-          面试融资岗时，你可以把团队讲成“技术负责人、创始人产业资源、战略投资人、真实场景客户”的组合能力，同时主动提出需要补充核验核心研发全职比例、期权安排、竞业限制和高校成果权属。
+         
           <Ref ids={['krA3', 'officialA3']} />
         </p>
       </div>
@@ -2464,7 +2509,6 @@ function ProductPage() {
 function CompetitionPage() {
   return (
     <PageShell
-      eyebrow="05 / Competition"
       title="竞争分析：具微不和通用机器狗拼热闹，而是拼重载和特种工况"
       intro="融资视角下，竞品比较不只是参数高低，而是产品能力能否支撑客户预算、订单质量、场景复制和估值解释。"
     >
@@ -2727,9 +2771,8 @@ function ScalePage() {
 function EvidencePage() {
   return (
     <PageShell
-      eyebrow="06 / Evidence"
-      title="数据来源：把判断挂到可核验出处上"
-      intro="这一页不是替公司“吹”，而是把公开资料、媒体口径和行研数据分层展示，方便你在面试里解释证据强弱。"
+      title="6.1 数据来源：把判断挂到可核验出处上"
+      intro="公开资料、媒体口径和行研数据"
       featuredTitle
       className="industry-dark-page business-dark-page"
     >

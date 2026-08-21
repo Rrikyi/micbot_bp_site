@@ -1327,7 +1327,9 @@ h3 {
 
 .capital-question-head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
@@ -1355,6 +1357,43 @@ h3 {
 .status-pill.slate {
   color: #4b6470;
   background: rgba(74, 100, 112, 0.12);
+}
+
+.capital-score-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  min-height: 28px;
+  padding: 0 12px;
+  border: 1px solid rgba(15, 154, 138, 0.16);
+  border-radius: 999px;
+  background: rgba(234, 246, 244, 0.88);
+}
+
+.capital-score-pill strong {
+  color: var(--teal-dark);
+  font-size: 15px;
+  font-weight: 840;
+}
+
+.capital-score-pill em {
+  color: var(--muted);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.capital-score-parts {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.capital-score-parts li + li {
+  margin-top: 6px;
 }
 
 .capital-question-body p {
@@ -1415,6 +1454,20 @@ h3 {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.business-dark-page .capital-score-pill {
+  border-color: rgba(85, 216, 202, 0.18);
+  background: rgba(85, 216, 202, 0.08);
+}
+
+.business-dark-page .capital-score-pill strong {
+  color: #7ce5da;
+}
+
+.business-dark-page .capital-score-pill em,
+.business-dark-page .capital-score-parts {
+  color: rgba(244, 248, 247, 0.64);
+}
+
 .business-dark-page .capital-question-row.tone-green {
   border-left-color: var(--teal);
 }
@@ -1425,6 +1478,68 @@ h3 {
 
 .business-dark-page .capital-question-row.tone-slate {
   border-left-color: rgba(255, 255, 255, 0.24);
+}
+
+.business-dark-page .endgame-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.business-dark-page .endgame-summary-grid article {
+  min-height: 210px;
+  padding: 24px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: none;
+}
+
+.business-dark-page .endgame-summary-grid small {
+  color: rgba(85, 216, 202, 0.82);
+  font-weight: 820;
+  letter-spacing: 0.06em;
+}
+
+.business-dark-page .endgame-summary-grid h3,
+.business-dark-page .team-card h3 {
+  color: #f4f8f7;
+}
+
+.business-dark-page .endgame-summary-grid p {
+  color: rgba(244, 248, 247, 0.64);
+}
+
+.business-dark-page .team-grid {
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.business-dark-page .team-card {
+  border: 0;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: none;
+}
+
+.business-dark-page .team-card strong {
+  color: rgba(85, 216, 202, 0.86);
+}
+
+.business-dark-page .team-card p {
+  color: rgba(244, 248, 247, 0.64);
+}
+
+.business-dark-page .team-card .source-pill {
+  border-color: rgba(85, 216, 202, 0.18);
+  background: rgba(85, 216, 202, 0.08);
+  color: #7ce5da;
 }
 
 .logic-grid {
