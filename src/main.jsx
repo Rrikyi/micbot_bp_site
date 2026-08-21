@@ -1320,80 +1320,104 @@ const businessCanvasBlocks = [
   },
 ];
 
-const capitalLogic = [
+const capitalQuestions = [
   {
-    title: '1. 你做的是生意，还是能资本化的项目？',
-    verdict: '先看能不能从线性增长走向可复制扩张',
-    text: '如果新增客户还要持续堆同等人力和项目成本，那就是生意；如果可以靠产品包、平台化和边际成本下降去扩张，才有资本化基础。',
+    q: 'Q1',
+    title: '资本化',
+    status: '部分具备',
+    tone: 'amber',
+    summary: '有产品、平台和场景叙事，但可复制收入、边际成本下降和平台化证据还要继续补。',
     refs: ['officialP1', 'officialP2', 'officialExr', 'hubMove'],
   },
   {
-    title: '2. 技术专利、客户关系和资源，到底是不是资产？',
-    verdict: '先看能不能形成定价权或复利特征',
-    text: '技术要嵌入场景，客户要有转换成本，数据要能持续回流，品牌要形成溢价；否则更多只是生产资料，不是资本眼里的资产。',
-    refs: ['hubMove', 'micvlc'],
+    q: 'Q2',
+    title: '资产',
+    status: '部分具备',
+    tone: 'amber',
+    summary: '准入资质、客户资源和数据都有资产化方向，但订阅、留存、复购和定价权仍需验证。',
+    refs: ['hubMove', 'micvlc', 'officialA3'],
   },
   {
-    title: '3. 你在产业链的哪个环节，能分到多少利润？',
-    verdict: '先看是不是卡在稀缺节点',
-    text: '真正值钱的是离客户最近、离稀缺资源最近、别人短期绕不过去的位置。具微更适合讲成特种工业移动作业入口，而不是普通硬件节点。',
+    q: 'Q3',
+    title: '产业链',
+    status: '具备',
+    tone: 'green',
+    summary: '卡在特种工业移动作业入口和高危场景入口，位置比普通硬件更接近稀缺节点。',
     refs: ['officialP1', 'officialP2', 'officialExr', 'krA3'],
   },
   {
-    title: '4. 你的壁垒是不是结构性的？',
-    verdict: '先看别人能不能很快追上来',
-    text: '结构性壁垒来自准入资质、网络效应、数据飞轮、转换成本和品牌心智，而不是单纯参数领先。资本更看重的是壁垒能否沉淀。',
+    q: 'Q4',
+    title: '壁垒',
+    status: '具备',
+    tone: 'green',
+    summary: '防爆资质、1000Gs 强磁、四防、重载和软件平台，已经具备结构性壁垒的雏形。',
     refs: ['officialExr', 'hubMove', 'micvlc'],
   },
   {
-    title: '5. 这轮融资买的到底是什么跃迁？',
-    verdict: '先看是不是从 1 到 N 的关键节点',
-    text: '投资人关心的是估值能否跨节点抬升：验证付费、复制获客、提升议价、跨区域扩张，而不只是今年收入能做到多少。',
+    q: 'Q5',
+    title: '估值',
+    status: '部分具备',
+    tone: 'amber',
+    summary: '融资、订单和营收故事可以支撑估值抬升，但从 1 到 N 的下一跳仍要靠更强的交付和复购证明。',
     refs: ['officialA2', 'sinaA2', 'reportCalc'],
   },
   {
-    title: '6. 这个行业的终局是什么结构？',
-    verdict: '先看你能不能活到最后',
-    text: '如果赛道会收敛成寡头，就要解释自己为什么能进前几名：品牌、规模、数据、供应链，哪一项在推动你进入更高位次。',
+    q: 'Q6',
+    title: '终局',
+    status: '部分具备',
+    tone: 'amber',
+    summary: '可以讲成特种工业平台型公司，但是否能成为终局玩家，还取决于规模、品牌和数据能否继续累积。',
     refs: ['idc', 'smartMineMarket'],
   },
   {
-    title: '7. 你的团队能不能打未来的硬仗？',
-    verdict: '先看现在能力和未来战役是否匹配',
-    text: 'A 轮前至少要打产品、市场和组织三场仗。融资岗看的不是你“觉得行不行”，而是团队配置能不能支撑下一阶段的增长和交付。',
+    q: 'Q7',
+    title: '团队',
+    status: '待验证',
+    tone: 'slate',
+    summary: '能力画像有亮点，但产品、市场、组织三场硬仗是否都能打赢，还需要更多公开材料和结果验证。',
     refs: ['krA3', 'officialA3'],
   },
 ];
 
-const assetLogic = [
+const assetQuestions = [
   {
-    title: '技术专利是不是资产',
-    status: '有公开检索入口，但强专利壁垒未被充分证明',
-    text: '公开专利检索可以作为资产线索，但融资材料不能把外观设计或单点专利直接等同于核心算法护城河。要继续核验发明专利、控制算法、关节模组、权利要求范围和是否绕不开。',
+    q: 'Q1',
+    title: '专利',
+    status: '部分具备',
+    tone: 'amber',
+    summary: '有公开专利线索和本体/平台叙事，但核心算法、关节模组和是否绕不开，还要继续核验。',
     refs: ['micbotPatentT', 'officialT1'],
   },
   {
-    title: '客户关系是不是资产',
-    status: '如果能转化为复购、数据和场景排他，就是资产',
-    text: '魏桥、滨化等产业资本和场景资源能降低试点成本，但只有当其转化为真实采购、验收回款、复购和行业标杆，才是可资本化资产。',
+    q: 'Q2',
+    title: '客户',
+    status: '部分具备',
+    tone: 'amber',
+    summary: '魏桥、滨化、神火等产业客户和场景资源说明客户入口存在，但复购、回款和切换成本仍需验证。',
     refs: ['officialA3', 'krA3', 'officialA2'],
   },
   {
-    title: '准入资质是不是资产',
-    status: '是最接近结构性壁垒的切口之一',
-    text: '防爆、矿安、IECEx、ATEX 等资质如果覆盖真实交付配置，会形成竞对短期难以绕过的门槛。当前公开资料支持“防爆叙事”，证书原件和适用范围仍需尽调。',
+    q: 'Q3',
+    title: '资质',
+    status: '具备',
+    tone: 'green',
+    summary: '防爆、四防、1000Gs 强磁和特种场景准入，是最接近结构性壁垒、也最像资产的部分。',
     refs: ['officialExr', 'krA3'],
   },
   {
-    title: '数据飞轮是不是资产',
-    status: '是未来资产，不是当前可完全确认的资产',
-    text: '数据飞轮需要设备在线率、任务完成率、故障间隔、场景数据和模型迭代记录。MicVLC 提供叙事入口，但公开资料尚不足以证明数据规模和算法效果随部署自我增强。',
+    q: 'Q4',
+    title: '数据',
+    status: '部分具备',
+    tone: 'amber',
+    summary: 'HUB / MOVE / MicVLC 给了数据闭环入口，但在线率、任务完成率、故障间隔和模型效果还需要更多证据。',
     refs: ['micvlc', 'hubMove'],
   },
   {
-    title: '品牌心智是不是资产',
-    status: 'B2B 场景品牌不等于大众知名度',
-    text: '在工业客户中，品牌心智来自安全可靠、认证齐全、交付稳定和出事故有人负责；不是短视频热度。具微应争夺“特种工业重载轮足”的第一心智。',
+    q: 'Q5',
+    title: '品牌',
+    status: '待验证',
+    tone: 'slate',
+    summary: 'B2B 品牌不是知名度，而是安全、可靠、可交付的心智；具微正在建立，但还没到完全坐实阶段。',
     refs: ['officialP1', 'officialP2', 'officialExr'],
   },
 ];
@@ -2014,39 +2038,47 @@ function BusinessTractionPage() {
 function CapitalizationPage() {
   return (
     <PageShell
-      title="3.1 资本逻辑：把生意做成资产，把项目做成资本化结构"
-      intro="资本看的不是单次利润，而是这门生意能不能复制、锁定、占住稀缺节点并持续跃迁。具微这页要回答的，是它凭什么从好生意走向可资本化项目。"
+      title="3.1 资本逻辑：七大核心观察点"
+      intro="按照资本化、资产、产业链、壁垒、估值、终局、团队这七问来拆解，判断具微科技哪些能力已经具备，哪些还在验证中。"
       featuredTitle
+      className="industry-dark-page business-dark-page"
     >
       <div className="capital-hero">
-        <div>
+        <div className="capital-hero-main">
           <span className="eyebrow">Capital Logic</span>
-          <h3>先看三件事：能复制、能锁定、能形成议价权。</h3>
+          <h3>能不能复制，能不能锁定，能不能越做越值钱</h3>
           <p>
-            如果这三件事站不住，后面的收入、估值和融资故事都只是“生意”；站得住，才有机会变成资产和壁垒。
+            对具微来说，最强的是 Q3 产业链位置和 Q4 壁垒；Q1、Q2、Q5、Q6、Q7 目前更多是“有方向、在验证”。
           </p>
         </div>
-        <div className="capital-pill-list">
-          <span>可复制：收入能放大，边际成本要下降</span>
-          <span>可锁定：用户进得来，也要出不去</span>
-          <span>可议价：要卡住别人短期绕不过去的节点</span>
+        <div className="capital-hero-side">
+          <span>Q3 / Q4 最强</span>
+          <strong>产业链 + 壁垒</strong>
+          <p>Q1、Q2、Q5、Q6、Q7：部分具备或待验证。</p>
         </div>
       </div>
-      <div className="capital-score-grid capital-logic-grid">
-        {capitalLogic.map((item) => (
-          <article key={item.title}>
-            <small>{item.verdict}</small>
-            <h3>{item.title}</h3>
-            <p>
-              {item.text}
-              <Ref ids={item.refs} />
-            </p>
+      <div className="capital-question-list">
+        {capitalQuestions.map((item) => (
+          <article key={item.q} className={`capital-question-row tone-${item.tone}`}>
+            <div className="capital-question-label">
+              <strong>{item.q}</strong>
+              <span>{item.title}</span>
+            </div>
+            <div className="capital-question-body">
+              <div className="capital-question-head">
+                <span className={`status-pill ${item.tone}`}>{item.status}</span>
+              </div>
+              <p>
+                {item.summary}
+                <Ref ids={item.refs} />
+              </p>
+            </div>
           </article>
         ))}
       </div>
       <div className="callout capital-conclusion">
         <ClipboardCheck size={24} />
-        <p>一句话总结：资本逻辑不是证明你在做一门好生意，而是证明你正在把生意做成资产，把项目做成可复制、可放大、可跃迁的资本化结构。</p>
+        <p>整体判断：具微不是“所有项都满分”，但在 Q3 产业链位置和 Q4 壁垒上最强；资本化、资产化、估值跃迁、终局和团队这几项还需要继续用订单、回款、复购和组织能力去验证。</p>
       </div>
     </PageShell>
   );
@@ -2056,37 +2088,42 @@ function AssetsPage() {
   return (
     <PageShell
       title="4.1 资产壁垒：专利、客户、资质、数据、品牌"
-      intro="判断每一项能不能提高客户转化成本、形成持续议价权，并随着规模扩大产生复利。"
+      intro="按专利、客户、资质、数据、品牌五项逐一判断，看看具微哪些已经接近资产，哪些还在验证中。"
+      featuredTitle
+      className="industry-dark-page business-dark-page"
     >
-      <div className="asset-logic-grid">
-        {assetLogic.map((item) => (
-          <article key={item.title}>
-            <small>{item.status}</small>
-            <h3>{item.title}</h3>
-            <p>
-              {item.text}
-              <Ref ids={item.refs} />
-            </p>
+      <div className="capital-hero">
+        <div className="capital-hero-main">
+          <span className="eyebrow">Asset Barrier</span>
+          <h3>先看五项：专利、客户、资质、数据、品牌。</h3>
+          <p>
+            对具微来说，最强的是资质；客户和数据有资产化方向；专利和品牌还要继续补证据。
+          </p>
+        </div>
+        <div className="capital-hero-side">
+          <span>判断方式</span>
+          <strong>不是“有没有”，而是“能不能变成资产”</strong>
+          <p>关键看是否能提高转化成本、形成定价权，并随着规模扩大产生复利。</p>
+        </div>
+      </div>
+      <div className="capital-question-list">
+        {assetQuestions.map((item) => (
+          <article key={item.q} className={`capital-question-row tone-${item.tone}`}>
+            <div className="capital-question-label">
+              <strong>{item.q}</strong>
+              <span>{item.title}</span>
+            </div>
+            <div className="capital-question-body">
+              <div className="capital-question-head">
+                <span className={`status-pill ${item.tone}`}>{item.status}</span>
+              </div>
+              <p>
+                {item.summary}
+                <Ref ids={item.refs} />
+              </p>
+            </div>
           </article>
         ))}
-      </div>
-      <div className="moat-grid">
-        {moatItems.map((item) => {
-          const Icon = item.icon;
-          return (
-            <article key={item.title}>
-              <div className="moat-title">
-                <Icon size={24} />
-                <h3>{item.title}</h3>
-              </div>
-              <ul>
-                {item.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-          );
-        })}
       </div>
     </PageShell>
   );
@@ -2690,12 +2727,16 @@ function ScalePage() {
 function EvidencePage() {
   return (
     <PageShell
-      title="6.1 数据来源"
+      eyebrow="06 / Evidence"
+      title="数据来源：把判断挂到可核验出处上"
+      intro="这一页不是替公司“吹”，而是把公开资料、媒体口径和行研数据分层展示，方便你在面试里解释证据强弱。"
+      featuredTitle
+      className="industry-dark-page business-dark-page"
     >
       <div className="evidence-layout">
         <figure>
           <img src="/assets/evidence_score.png" alt="证据强度图" />
-          <figcaption>证据强度来自此前行研的分层打分。</figcaption>
+          <figcaption>证据强度按来源类型、可核验性和结论稳健度分层。</figcaption>
         </figure>
         <div className="evidence-list">
           {evidenceItems.map(([source, use, refs]) => (
