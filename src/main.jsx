@@ -64,6 +64,7 @@ const sourceRegistry = {
     type: '公司官网',
     url: 'https://www.micbotics.cn/',
     note: '产品矩阵、应用场景、新闻动态、联系方式',
+
   },
   officialP1: {
     id: 'S2',
@@ -2079,7 +2080,7 @@ function CapitalizationPage() {
   return (
     <PageShell
       title="3.1 资本逻辑：七大核心观察点"
-      intro="按照资本化、资产、产业链、壁垒、估值、终局、团队这七问来拆解，判断具微科技哪些能力已经具备，哪些还在验证中。"
+      intro="资本化、资产、产业链、壁垒、估值、终局、团队"
       featuredTitle
       className="industry-dark-page business-dark-page"
     >
@@ -2759,7 +2760,7 @@ function ScalePage() {
 function EvidencePage() {
   return (
     <PageShell
-      title="6.1 数据来源：把判断挂到可核验出处上"
+      title="6.1 数据来源"
       intro="公开资料、媒体口径和行研数据"
       featuredTitle
       className="industry-dark-page business-dark-page"
@@ -2874,7 +2875,7 @@ function App() {
           <span className="brand-mark">M</span>
           <span>
             <strong>MICBOT</strong>
-            <small>公开信息融资叙事</small>
+            
           </span>
         </a>
         <nav>
